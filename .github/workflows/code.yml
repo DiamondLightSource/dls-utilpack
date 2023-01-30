@@ -72,11 +72,8 @@ jobs:
       - name: Run tests
         run: |
           sudo apt install environment-modules
-          echo "MODULESHOME was" $MODULESHOME
           export MODULESHOME=/usr/share/modules
-          echo "MODULESHOME is" $MODULESHOME
           source $MODULESHOME/init/bash
-          module list
           pytest
 
       - name: Upload coverage to Codecov
@@ -214,4 +211,5 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_TOKEN }}
-# dae_devops_fingerprint 158948073946b84d74750bf9cf1787ca
+
+# dae_devops_fingerprint d05711f3373ed522dc9b751401a29c68
