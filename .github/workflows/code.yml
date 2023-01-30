@@ -69,8 +69,8 @@ jobs:
       - name: Install Environment Module support
         run: |
           sudo apt install environment-modules
-          ls -la /usr/share/Modules
-          /usr/share/Modules/init/bash
+          ls -la /usr/share/modules
+          /usr/share/modules/init/bash
 
       - name: List dependency tree
         run: pipdeptree
