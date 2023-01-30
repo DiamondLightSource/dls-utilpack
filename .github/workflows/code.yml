@@ -66,6 +66,9 @@ jobs:
           requirements_file: requirements-test-${{ matrix.os }}-${{ matrix.python }}.txt
           install_options: ${{ matrix.install }}
 
+      - name: Install Environment Module support
+        run: apt install environment-modules
+
       - name: List dependency tree
         run: pipdeptree
 
@@ -207,5 +210,4 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.PYPI_TOKEN }}
-
 # dae_devops_fingerprint 158948073946b84d74750bf9cf1787ca
