@@ -1,6 +1,7 @@
 import logging
 
 import pytest
+
 from dls_utilpack.substitute import RecursionDepth, substitute_dict, substitute_string
 
 # Base class for the tester.

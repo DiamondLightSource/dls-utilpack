@@ -2,6 +2,7 @@ import logging
 import os
 
 import pytest
+
 from dls_utilpack.module import module_get_environ, module_use
 
 # Base class for the tester.

@@ -1,6 +1,7 @@
 import logging
 
 import pytest
+
 from dls_utilpack.datatypes import Datatypes, verify
 
 # Base class for the tester.

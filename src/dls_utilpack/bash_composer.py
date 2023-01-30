@@ -5,7 +5,8 @@ from typing import List, Optional
 
 # ---------------------------------------------------------------------
 class Element:
-    pass
+    def compose(self) -> List[str]:
+        return []
 
 
 # ---------------------------------------------------------------------
@@ -84,6 +85,9 @@ class LoadModules(Element):
         Args:
             directories (List[str]): List of directories for the "module use" command.
             modules (List[str]): List of names for the "module load" command.
+
+        Returns:
+            List[str]: Lines to be added to the bash script.
         """
         self.__directories = directories
         self.__modules = modules
@@ -120,7 +124,7 @@ class LoadModules(Element):
 # ---------------------------------------------------------------------
 class BashComposer:
     def __init__(self, should_include_prolog: Optional[bool] = True):
-        self.__elements = []
+        self.__elements: List[Element] = []
         if should_include_prolog:
             self.add(Prolog())
 
@@ -148,7 +152,7 @@ class BashComposer:
         self.add(LoadModules(directories, modules))
 
     # -----------------------------------------------------------------
-    def compose_lines(self) -> str:
+    def compose_lines(self) -> List[str]:
         """
         Return bash script lines.
 

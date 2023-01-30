@@ -10,6 +10,7 @@ from importlib.metadata import version as importlib_metadata_version
 from typing import Optional
 
 import dls_logformatter.version
+
 from dls_utilpack import __version__
 
 
