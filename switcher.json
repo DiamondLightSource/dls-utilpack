@@ -2,5 +2,9 @@
   {
     "version": "main",
     "url": "https://DiamondLightSource.github.io/dls-utilpack/main/"
+  },
+  {
+    "version": "1.0.0",
+    "url": "https://DiamondLightSource.github.io/dls-utilpack/1.0.0/"
   }
 ]
