@@ -67,7 +67,7 @@ jobs:
           install_options: ${{ matrix.install }}
 
       - name: Install Environment Module support
-        run: apt install environment-modules
+        run: sudo apt install environment-modules
 
       - name: List dependency tree
         run: pipdeptree
