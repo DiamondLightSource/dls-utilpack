@@ -89,13 +89,16 @@ class LoadModules(Element):
         self.__modules = modules
 
     def compose(self) -> List[str]:
-        composer = BashComposer()
+        composer = BashComposer(should_include_prolog=False)
 
         # Establish a USER environment variable.
         composer.add(Raw('export USER="`/usr/bin/id -un`"'))
 
         # Establish access to linux environment modules.
-        composer.add(Command("source /usr/share/Modules/init/bash"))
+        MODULESHOME = os.environ.get("MODULESHOME")
+        if MODULESHOME is None:
+            raise RuntimeError("MODULESHOME environment variable is not set")
+        composer.add(Command(f"source {MODULESHOME}/init/bash"))
 
         # Load the module which supports the ptyrex_recon script.
         composer.add(Command("module purge"))
@@ -108,7 +111,6 @@ class LoadModules(Element):
 
         # Put a few things in the log.
         composer.add(Command("module list 2>&1"))
-        composer.add(Command("which python"))
         composer.add(Command("python --version"))
         composer.add(Print("------ end of modules_load_bash_lines ------"))
 
@@ -117,9 +119,10 @@ class LoadModules(Element):
 
 # ---------------------------------------------------------------------
 class BashComposer:
-    def __init__(self):
+    def __init__(self, should_include_prolog: Optional[bool] = True):
         self.__elements = []
-        self.add(Prolog())
+        if should_include_prolog:
+            self.add(Prolog())
 
     # -----------------------------------------------------------------
     def add(self, element: Element) -> None:
