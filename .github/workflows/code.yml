@@ -69,14 +69,17 @@ jobs:
       - name: Install Environment Module support
         run: |
           sudo apt install environment-modules
-          ls -la /usr/share/modules
-          /usr/share/modules/init/bash
+          echo $MODULESHOME
+          export MODULESHOME=/usr/share/modules
+          source $MODULESHOME/init/bash
 
       - name: List dependency tree
         run: pipdeptree
 
       - name: Run tests
-        run: pytest
+        run: |
+          echo $MODULESHOME
+          pytest
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
