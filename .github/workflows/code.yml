@@ -69,9 +69,11 @@ jobs:
       - name: Install Environment Module support
         run: |
           sudo apt install environment-modules
-          echo $MODULESHOME
+          echo "MODULESHOME was" $MODULESHOME
           export MODULESHOME=/usr/share/modules
+          echo "MODULESHOME is" $MODULESHOME
           source $MODULESHOME/init/bash
+          module list
 
       - name: List dependency tree
         run: pipdeptree
@@ -79,6 +81,7 @@ jobs:
       - name: Run tests
         run: |
           echo $MODULESHOME
+          module list
           pytest
 
       - name: Upload coverage to Codecov
