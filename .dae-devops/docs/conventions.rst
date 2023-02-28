@@ -1,5 +1,5 @@
 .. # ********** Please don't edit this file!
-.. # ********** It has been generated automatically by dae_devops version 0.4.0.
+.. # ********** It has been generated automatically by dae_devops version 0.5.2.
 .. # ********** For repository_name dls-utilpack
 
 Naming conventions
@@ -31,4 +31,4 @@ repository
     lowercase, hyphens
 
 
-.. # dae_devops_fingerprint b3558c0e136c864dc9d0f9afc11a04f9
+.. # dae_devops_fingerprint 8dbc3a8375bfa18c5de367f43e940baa

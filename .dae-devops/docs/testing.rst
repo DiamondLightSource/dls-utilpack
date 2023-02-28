@@ -1,5 +1,5 @@
 .. # ********** Please don't edit this file!
-.. # ********** It has been generated automatically by dae_devops version 0.4.0.
+.. # ********** It has been generated automatically by dae_devops version 0.5.2.
 .. # ********** For repository_name dls-utilpack
 
 Testing
@@ -35,4 +35,4 @@ This allows peeking in there to see what's been written by the test.
     
 
 
-.. # dae_devops_fingerprint 6b1f132b576b9ae76b385016f7c0a1bd
+.. # dae_devops_fingerprint 17ae8c603ffe73c0fbdfcda48e7881bb

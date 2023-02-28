@@ -1,5 +1,5 @@
 # ********** Please don't edit this file!
-# ********** It has been generated automatically by dae_devops version 0.4.0.
+# ********** It has been generated automatically by dae_devops version 0.5.2.
 # ********** For repository_name dls-utilpack
 
 from pathlib import Path
@@ -188,7 +188,7 @@ ultimate_replacements = {
     "$" + "{repository_name}": "dls-utilpack",
     "$" + "{package_name}": "dls_utilpack",
     "$" + "{git_url}": "https://gitlab.diamond.ac.uk/scisoft",
-    "$" + "{python_version_at_least}": "3.8",
+    "$" + "{python_version_at_least}": "3.9",
 }
 
 
@@ -197,4 +197,4 @@ def setup(app):
     app.connect("source-read", ultimateReplace)
 
 
-# dae_devops_fingerprint 15d7a62ee5b6d2187af4e3cd3f5b1709
+# dae_devops_fingerprint 82dcaf368fc09480cbf4ba8fbc9487b9

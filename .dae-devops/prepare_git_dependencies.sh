@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # ********** Please don't edit this file!
-# ********** It has been generated automatically by dae_devops version 0.4.0.
+# ********** It has been generated automatically by dae_devops version 0.5.2.
 # ********** For repository_name dls-utilpack
 
 me=${BASH_SOURCE}
@@ -13,4 +13,4 @@ function __install {
 }
 
 
-# dae_devops_fingerprint adf670ea8d6c81160879488aaba2c112
+# dae_devops_fingerprint 4e341ec615d392fd3f44c8c01eaa8fbd

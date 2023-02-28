@@ -1,5 +1,5 @@
 .. # ********** Please don't edit this file!
-.. # ********** It has been generated automatically by dae_devops version 0.4.0.
+.. # ********** It has been generated automatically by dae_devops version 0.5.2.
 .. # ********** For repository_name dls-utilpack
 
 About the documentation
@@ -21,4 +21,4 @@ improve most documentation - often immensely.
 
 `More information on this topic. <https://documentation.divio.com>`_
 
-.. # dae_devops_fingerprint 18fec62d94dbce9a330676b9abc31fd9
+.. # dae_devops_fingerprint df17fb0c73cb2f5162b27c5689074969

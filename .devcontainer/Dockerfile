@@ -1,5 +1,5 @@
 # ********** Please don't edit this file!
-# ********** It has been generated automatically by dae_devops version 0.4.0.
+# ********** It has been generated automatically by dae_devops version 0.5.2.
 # ********** For repository_name dls-utilpack
 
 # This file is for use as a devcontainer and a runtime container
@@ -40,4 +40,4 @@ ENV PATH=/venv/bin:$PATH
 ENTRYPOINT ["dls-utilpack"]
 CMD ["--version"]
 
-# dae_devops_fingerprint eb9e2d96b111d0da28a734ed432a84d8
+# dae_devops_fingerprint 29e344c513daf6f125ee4e8388a06736

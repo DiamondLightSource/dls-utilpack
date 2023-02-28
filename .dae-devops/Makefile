@@ -1,5 +1,5 @@
 # ********** Please don't edit this file!
-# ********** It has been generated automatically by dae_devops version 0.4.0.
+# ********** It has been generated automatically by dae_devops version 0.5.2.
 # ********** For repository_name dls-utilpack
 
 # ---------------------------------------------------------------------
@@ -69,4 +69,4 @@ publish_docs:
 	cp -r build/html/* $(DOCS_PUBLISH_ROOT)
 	
 
-# dae_devops_fingerprint 833a6052cf5f50d0079c389bbfa591fd
+# dae_devops_fingerprint d63e047529404daf652476f24688ea34

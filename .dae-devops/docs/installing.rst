@@ -1,16 +1,16 @@
 .. # ********** Please don't edit this file!
-.. # ********** It has been generated automatically by dae_devops version 0.4.0.
+.. # ********** It has been generated automatically by dae_devops version 0.5.2.
 .. # ********** For repository_name dls-utilpack
 
 Installing
 =======================================================================
 
 
-You will need python 3.8 or later. 
+You will need python 3.9 or later. 
 
-On a Diamond Light Source internal computer, you can achieve Python 3.8 by::
+On a Diamond Light Source internal computer, you can achieve Python 3.9 by::
 
-    $ module load python/3.8
+    $ module load python/3.9
 
 You can check your version of python by typing into a terminal::
 
@@ -40,4 +40,4 @@ You can check the version that has been installed by typing::
     $ dls-utilpack --version
     $ dls-utilpack --version-json
 
-.. # dae_devops_fingerprint 3fa22d7148c64ac933cb47eaf77d77e6
+.. # dae_devops_fingerprint fa480c2e4f59a68b0ef91bf12e5f6b58

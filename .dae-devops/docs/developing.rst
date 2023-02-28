@@ -1,5 +1,5 @@
 .. # ********** Please don't edit this file!
-.. # ********** It has been generated automatically by dae_devops version 0.4.0.
+.. # ********** It has been generated automatically by dae_devops version 0.5.2.
 .. # ********** For repository_name dls-utilpack
 
 Developing
@@ -13,7 +13,7 @@ Clone the repository::
 
 It is recommended that you install into a virtual environment so this
 installation will not interfere with any existing Python software.
-Make sure to have at least python version 3.8 then::
+Make sure to have at least python version 3.9 then::
 
     $ python3 -m venv /scratch/$USER/myvenv
     $ source /scratch/$USER/myvenv/bin/activate
@@ -36,4 +36,4 @@ If you plan to modify the docs, you will need to::
     
 
 
-.. # dae_devops_fingerprint 5cb1fdfc440046b137c8255a1d96c480
+.. # dae_devops_fingerprint 10795db3a0e161045debf0c89348bb24

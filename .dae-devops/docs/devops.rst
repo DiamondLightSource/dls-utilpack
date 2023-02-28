@@ -1,5 +1,5 @@
 .. # ********** Please don't edit this file!
-.. # ********** It has been generated automatically by dae_devops version 0.4.0.
+.. # ********** It has been generated automatically by dae_devops version 0.5.2.
 .. # ********** For repository_name dls-utilpack
 
 Devops
@@ -43,4 +43,4 @@ Publishing::
     
 
 
-.. # dae_devops_fingerprint 50bdf0d4190273f50b3aa4174dc3ac3f
+.. # dae_devops_fingerprint d2bca688da0d1b2a93392bca1d74bcf9
