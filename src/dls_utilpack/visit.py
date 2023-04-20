@@ -38,12 +38,12 @@ def get_visit_year(beamline, visit):
 def get_xchem_subdirectory(visit):
 
     # This is the pattern all visits must have.
-    pattern = r"^([a-z][a-z][0-9][0-9][0-9][0-9][0-9])[-]([0-9]+)$"
+    pattern = r"^([a-z][a-z][0-9][0-9][0-9][0-9][0-9])[-]([0-9]+)([_].*)?$"
 
     match = re.search(pattern, visit)
 
     if not match:
-        raise RuntimeError(
+        raise ValueError(
             f'the visit name "{visit}" does not conform to the visit naming convention'
         )
 

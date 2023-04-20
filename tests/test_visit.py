@@ -29,18 +29,26 @@ class TestVisit(BaseTester):
         # Check valid visits.
         assert get_xchem_subdirectory("aa12345-1") == "aa12345/aa12345-1"
         assert get_xchem_subdirectory("aa12345-1234") == "aa12345/aa12345-1234"
+        assert get_xchem_subdirectory("aa12345-1234_") == "aa12345/aa12345-1234"
+        assert (
+            get_xchem_subdirectory("aa12345-1234_some stuff") == "aa12345/aa12345-1234"
+        )
 
         # Check invalid visit formats.
-        with pytest.raises(RuntimeError) as excinfo:
+        with pytest.raises(ValueError) as excinfo:
             get_xchem_subdirectory("aa12345")
         assert "convention" in str(excinfo.value)
 
-        with pytest.raises(RuntimeError) as excinfo:
+        with pytest.raises(ValueError) as excinfo:
             get_xchem_subdirectory("a12345-1")
         assert "convention" in str(excinfo.value)
 
-        with pytest.raises(RuntimeError) as excinfo:
+        with pytest.raises(ValueError) as excinfo:
             get_xchem_subdirectory("[aa12345-1]")
+        assert "convention" in str(excinfo.value)
+
+        with pytest.raises(ValueError) as excinfo:
+            get_xchem_subdirectory("aa12345-1-somestuff")
         assert "convention" in str(excinfo.value)
 
         # Check good directory.
