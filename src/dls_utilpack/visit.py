@@ -63,6 +63,6 @@ def get_xchem_directory(parent, visit):
     full_path = Path(parent) / subdirectory
 
     if not full_path.is_dir():
-        raise RuntimeError(f"the visit directory {str(full_path)} does not exist")
+        raise VisitNotFound(f"the visit directory {str(full_path)} does not exist")
 
     return str(full_path)

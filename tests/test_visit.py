@@ -3,7 +3,11 @@ from pathlib import Path
 
 import pytest
 
-from dls_utilpack.visit import get_xchem_directory, get_xchem_subdirectory
+from dls_utilpack.visit import (
+    VisitNotFound,
+    get_xchem_directory,
+    get_xchem_subdirectory,
+)
 
 # Base class for the tester.
 from tests.base_tester import BaseTester
@@ -59,6 +63,6 @@ class TestVisit(BaseTester):
         assert get_xchem_directory(str(parent), "aa12345-1") == str(full_path)
 
         # Check invalid directory.
-        with pytest.raises(RuntimeError) as excinfo:
+        with pytest.raises(VisitNotFound) as excinfo:
             get_xchem_directory("something", "aa12345-1")
         assert "does not exist" in str(excinfo.value)
