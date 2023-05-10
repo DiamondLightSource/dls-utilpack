@@ -25,14 +25,14 @@ class Signal:
     def _signal_handler(self, sig, frame):
         self._count += 1
         logger.debug(
-            "signum %d happened, count is now %d" % (self._signum, self._count)
+            "[DLSSIG] signum %d happened, count is now %d" % (self._signum, self._count)
         )
         if (
             self._auto_deactivate_count is not None
             and self._count >= self._auto_deactivate_count
         ):
             logger.debug(
-                "signum %d auto deactivate count %d reached"
+                "[DLSSIG] signum %d auto deactivate count %d reached"
                 % (self._signum, self._auto_deactivate_count)
             )
             self.deactivate()
@@ -41,12 +41,12 @@ class Signal:
     def activate(self, auto_deactivate_count=None):
         self._auto_deactivate_count = auto_deactivate_count
         self._original = signal.signal(self._signum, self._signal_handler)
-        # logger.debug("signum %d original handler %s replaced by %s" % (self._signum, id(self._original), id(self._signal_handler)))
+        # logger.debug("[DLSSIG] signum %d original handler %s replaced by %s" % (self._signum, id(self._original), id(self._signal_handler)))
         if self._auto_deactivate_count is None:
-            logger.debug("signum %d activated" % (self._signum))
+            logger.debug("[DLSSIG] signum %d activated" % (self._signum))
         else:
             logger.debug(
-                "signum %d activated to auto deactivate at count %s"
+                "[DLSSIG] signum %d activated to auto deactivate at count %s"
                 % (self._signum, self._auto_deactivate_count)
             )
 
@@ -56,7 +56,7 @@ class Signal:
             # original_id = id(self._original)
             signal.signal(self._signum, self._original)
             self._original = None
-            # logger.debug("signum %d deactivated, restoring original handler %s" % (self._signum, original_id))
+            # logger.debug("[DLSSIG] signum %d deactivated, restoring original handler %s" % (self._signum, original_id))
 
     # -----------------------------------------------------------------
     def is_active(self):

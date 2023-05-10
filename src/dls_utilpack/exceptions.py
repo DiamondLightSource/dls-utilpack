@@ -2,6 +2,14 @@ class NotFound(RuntimeError):
     pass
 
 
+class ProgrammingFault(RuntimeError):
+    pass
+
+
+class EndOfList(RuntimeError):
+    pass
+
+
 # When something has no value set yet.
 class NotSet(RuntimeError):
     pass
