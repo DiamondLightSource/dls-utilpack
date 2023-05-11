@@ -32,6 +32,9 @@ class TestVisit(BaseTester):
 
         # Check valid visits.
         assert get_xchem_subdirectory("aa12345-1") == "aa12345/aa12345-1"
+        assert get_xchem_subdirectory("AB12345-1") == "ab12345/ab12345-1"
+        assert get_xchem_subdirectory("Ab12345-1") == "ab12345/ab12345-1"
+        assert get_xchem_subdirectory("aB12345-1") == "ab12345/ab12345-1"
         assert get_xchem_subdirectory("aa12345-1234") == "aa12345/aa12345-1234"
         assert get_xchem_subdirectory("aa12345-1234_") == "aa12345/aa12345-1234"
         assert (
