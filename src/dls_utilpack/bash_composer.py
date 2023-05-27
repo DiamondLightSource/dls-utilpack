@@ -5,6 +5,10 @@ from typing import List, Optional
 
 # ---------------------------------------------------------------------
 class Element:
+    """
+    Base class for other elements.
+    """
+
     def compose(self) -> List[str]:
         return []
 
@@ -83,8 +87,8 @@ class LoadModules(Element):
         Create object which composed to load linux environment modules in the bash script.
 
         Args:
-            directories (List[str]): List of directories for the "module use" command.
-            modules (List[str]): List of names for the "module load" command.
+            directories: List of directories for the "module use" command.
+            modules: List of names for the "module load" command.
 
         Returns:
             List[str]: Lines to be added to the bash script.
@@ -123,17 +127,39 @@ class LoadModules(Element):
 
 # ---------------------------------------------------------------------
 class BashComposer:
+    """
+    Class which helps with composing bash scripts consistently and reliably.
+    """
+
     def __init__(self, should_include_prolog: Optional[bool] = True):
+        """
+        Args:
+            should_include_prolog: True if should emit a prolog on this bash script. Defaults to True.
+        """
         self.__elements: List[Element] = []
         if should_include_prolog:
             self.add(Prolog())
 
     # -----------------------------------------------------------------
     def add(self, element: Element) -> None:
+        """
+        Add element to be included in the bash script.
+
+        Possible element classes are: Print, Raw, Command, Prolog and LoadModules.
+
+        Args:
+            element (Element): Element object.
+        """
         self.__elements.append(element)
 
     # -----------------------------------------------------------------
-    def add_print(self, message) -> None:
+    def add_print(self, message: str) -> None:
+        """
+        Add print element to bash script.
+
+        Args:
+            message (str): Message to be printed.
+        """
         self.add(Print(message))
 
     # -----------------------------------------------------------------
@@ -146,18 +172,18 @@ class BashComposer:
         Add shell commands for loading linux environment modules.
 
         Args:
-            directories (List[str]): List of directories for the "module use" command.
-            modules (List[str]): List of names for the "module load" command.
+            directories: List of directories for the "module use" command.
+            modules: List of names for the "module load" command.
         """
         self.add(LoadModules(directories, modules))
 
     # -----------------------------------------------------------------
     def compose_lines(self) -> List[str]:
         """
-        Return bash script lines.
+        Return bash script as list of lines.
 
         Returns:
-            List[str]: The complete bash script.
+            The complete bash script.
         """
 
         lines = []
@@ -169,7 +195,7 @@ class BashComposer:
     # -----------------------------------------------------------------
     def compose_string(self) -> str:
         """
-        Return composed bash script lines.
+        Return composed bash script as a string.
 
         Returns:
             str: The complete bash script.

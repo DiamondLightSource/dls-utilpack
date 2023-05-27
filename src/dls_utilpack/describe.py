@@ -1,8 +1,18 @@
 import json
+from typing import Any
 
 
 # ----------------------------------------------------------------------------------------
-def describe(name, value, level=0):
+def describe(name, value: Any, level: int = 0) -> str:
+    """
+    Compose a description of a variable's type and its value.
+
+    Args:
+        name: Name of the variable.
+        value: Value of the variable.
+        level: Indents output according to depth of recursion.
+    """
+
     value_type = "%s.%s" % (type(value).__module__, type(value).__name__)
 
     if isinstance(value, dict):

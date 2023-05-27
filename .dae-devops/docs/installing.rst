@@ -1,5 +1,5 @@
 .. # ********** Please don't edit this file!
-.. # ********** It has been generated automatically by dae_devops version 0.5.2.
+.. # ********** It has been generated automatically by dae_devops version 0.5.4.dev0+g1fb30ef.d20230527.
 .. # ********** For repository_name dls-utilpack
 
 Installing
@@ -24,20 +24,19 @@ installation will not interfere with any existing Python software::
     $ pip install --upgrade pip
 
 
-You can now use ``pip`` to install the library and its dependencies::
+You can now use ``pip`` to install the package and its dependencies::
 
-    $ export PIP_FIND_LINKS=/dls_sw/apps/bxflow/artifacts
     $ python3 -m pip install dls-utilpack
 
-If you require a feature that is not currently released you can also install
+If you require a feature that is not currently released, you can also install
 from git::
 
     $ python3 -m pip install git+https://gitlab.diamond.ac.uk/scisoft/dls-utilpack.git
 
-The library should now be installed and the commandline interface on your path.
+The package should now be installed and the command line should be available.
 You can check the version that has been installed by typing::
 
     $ dls-utilpack --version
     $ dls-utilpack --version-json
 
-.. # dae_devops_fingerprint fa480c2e4f59a68b0ef91bf12e5f6b58
+.. # dae_devops_fingerprint b78ff60b9b00c9fbed98165726b1e7c3

@@ -1,5 +1,5 @@
 .. # ********** Please don't edit this file!
-.. # ********** It has been generated automatically by dae_devops version 0.5.2.
+.. # ********** It has been generated automatically by dae_devops version 0.5.4.dev0+g1fb30ef.d20230527.
 .. # ********** For repository_name dls-utilpack
 
 Contributing to the project
@@ -38,4 +38,4 @@ should follow.
 
 .. _Developer Guide: https://diamondlightsource.github.io/dls-utilpack/main/developer/how-to/contribute.html
 
-.. # dae_devops_fingerprint e29f699b807ff29198e97d0163468ccd
+.. # dae_devops_fingerprint 3fc775c530563a4170bd6898f939025a

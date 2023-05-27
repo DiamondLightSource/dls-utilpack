@@ -51,7 +51,6 @@ def logging_setup():
 # --------------------------------------------------------------------------------
 @pytest.fixture(scope="function")
 def output_directory(request):
-    # TODO: Get a newline in conftest after pytest emits class name.
     print("")
 
     # Tmp directory which we can write into.

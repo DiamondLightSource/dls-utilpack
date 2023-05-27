@@ -12,6 +12,12 @@ datatype functions
     :members:
 
 
+formatting functions
+-----------------------------------------------------------------------
+.. automodule:: dls_utilpack.describe
+    :members:
+
+
 version functions
 -----------------------------------------------------------------------
 .. automodule:: dls_utilpack.version
