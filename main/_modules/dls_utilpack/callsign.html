@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dls_utilpack.callsign &#8212; dls-utilpack 1.3.2.dev3+gcc1bf0d documentation</title>
+    <title>dls_utilpack.callsign &#8212; dls-utilpack 1.4.1.dev1+g8eba23d documentation</title>
   
   
   
@@ -139,8 +139,29 @@
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../api/index.html">
-                        API
+                      <a class="nav-link nav-internal" href="../../tutorials/index.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../how-to/index.html">
+                        How-to Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../explanations/index.html">
+                        Explanations
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../reference/index.html">
+                        Reference
                       </a>
                     </li>
                 
@@ -234,8 +255,29 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../../api/index.html">
-                        API
+                      <a class="nav-link nav-internal" href="../../tutorials/index.html">
+                        Tutorials
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../how-to/index.html">
+                        How-to Guides
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../explanations/index.html">
+                        Explanations
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../reference/index.html">
+                        Reference
                       </a>
                     </li>
                 
@@ -352,14 +394,14 @@ document.write(`
 
 
 <span class="c1"># ----------------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="callsign"><a class="viewcode-back" href="../../api/modules.html#dls_utilpack.callsign.callsign">[docs]</a><span class="k">def</span> <span class="nf">callsign</span><span class="p">(</span><span class="n">something</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="callsign"><a class="viewcode-back" href="../../reference/modules.html#dls_utilpack.callsign.callsign">[docs]</a><span class="k">def</span> <span class="nf">callsign</span><span class="p">(</span><span class="n">something</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return the callsign of the object.  If a message is given,</span>
 <span class="sd">    then return a full message with the callsign prepended.</span>
 
 <span class="sd">    Args:</span>
-<span class="sd">        something (object): object for which the callsign is desired</span>
-<span class="sd">        message (Optional[str]): message body if a full message is desired</span>
+<span class="sd">        something: object for which the callsign is desired</span>
+<span class="sd">        message: message body if a full message is desired</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        str: callsign or callsign with message appended</span>
@@ -393,7 +435,7 @@ document.write(`
 
 
 <span class="c1"># ----------------------------------------------------------------------------------------</span>
-<div class="viewcode-block" id="callsign_html"><a class="viewcode-back" href="../../api/modules.html#dls_utilpack.callsign.callsign_html">[docs]</a><span class="k">def</span> <span class="nf">callsign_html</span><span class="p">(</span><span class="n">something</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="callsign_html"><a class="viewcode-back" href="../../reference/modules.html#dls_utilpack.callsign.callsign_html">[docs]</a><span class="k">def</span> <span class="nf">callsign_html</span><span class="p">(</span><span class="n">the_object</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span> <span class="n">message</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Return the callsign of the object wrapped in an html div with css class T_callsign.</span>
 
@@ -402,9 +444,13 @@ document.write(`
 <span class="sd">    Any html thus composed will have the callsign identifiers embedded in it.</span>
 
 <span class="sd">    The idea is that the css class normally be ``display: none;`` unless debugging.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        the_object: the object whose callsign is wanted.</span>
+<span class="sd">        message : Extra bit of message text if desired. Defaults to None.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">text</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">callsign</span><span class="p">(</span><span class="n">something</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">callsign</span><span class="p">(</span><span class="n">the_object</span><span class="p">,</span> <span class="n">message</span><span class="p">))</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;div class=&#39;T_callsign&#39;&gt;html generated by python class </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&lt;/div&gt;&quot;</span></div>
 </pre></div>
 
