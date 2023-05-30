@@ -5,7 +5,11 @@ import logging
 from dls_utilpack.exceptions import DuplicateUuidException, NotFound
 
 # Method to import a class from a file.
-from dls_utilpack.import_class import import_class
+from dls_utilpack.import_class import (
+    ImportClassFailed,
+    import_classname_from_filename,
+    import_classname_from_modulename,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -111,11 +115,21 @@ class Things:
         """"""
 
         # This looks like a request to load a class at runtime?
-        # The class type should be filename::classname.
-        if "::" in class_type:
+        # The class type should be filename::classname or modulename::classname.
 
-            RuntimeClass = import_class(class_type)
+        if class_type is not None:
+            parts = class_type.split("::")
+            if len(parts) == 2:
+                try:
+                    class_object = import_classname_from_filename(parts[1], parts[0])
+                    return class_object
+                except ImportClassFailed as exception:
+                    logger.debug(f"tried but {str(exception)}")
 
-            return RuntimeClass
+                try:
+                    class_object = import_classname_from_modulename(parts[1], parts[0])
+                    return class_object
+                except ImportClassFailed as exception:
+                    logger.debug(f"tried but {str(exception)}")
 
         raise NotFound("unable to get class for %s thing" % (class_type))
