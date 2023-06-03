@@ -17,7 +17,12 @@ class Thing:
 
     def __init__(self, thing_type: str, specification, predefined_uuid=None):
         self.__thing_type = thing_type
-        self.__specification = specification
+
+        if specification is None:
+            self.__specification = {}
+        else:
+            self.__specification = specification
+
         self.__uuid = predefined_uuid
         if self.__uuid is None:
             self.__uuid = str(uuid.uuid4())
