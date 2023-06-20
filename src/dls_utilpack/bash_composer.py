@@ -75,6 +75,7 @@ class Print(Element):
     def compose(self) -> List[str]:
         lines = []
 
+        lines.append("")
         lines.append(f"eval echo '{self.__message}'")
 
         return lines
@@ -119,7 +120,7 @@ class LoadModules(Element):
 
         # Put a few things in the log.
         composer.add(Command("module list 2>&1"))
-        composer.add(Command("python --version"))
+        composer.add(Command("python3 --version"))
         composer.add(Print("------ end of modules_load_bash_lines ------"))
 
         return composer.compose_lines()

@@ -35,7 +35,7 @@ class Context(ServerContextBase):
         """ """
         self.was_entered += 1
 
-    async def aexit(self, type, value, traceback):
+    async def aexit(self, type=None, value=None, traceback=None):
         """ """
         self.was_exited += 1
 

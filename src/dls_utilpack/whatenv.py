@@ -64,30 +64,42 @@ class Whatenv:
         self.__compose_scalar("HOSTNAME", output_dict)
         self.__compose_scalar("USER", output_dict)
         output_dict["os.getcwd"] = os.getcwd()
-        self.__compose_scalar("SGE_CELL", output_dict)
-        self.__compose_scalar("SGE_EXECD_PORT", output_dict)
-        self.__compose_scalar("SGE_QMASTER_PORT", output_dict)
-
-        self.__compose_scalar("SGE_HGR_gpu", output_dict)
-        self.__compose_scalar("SGE_HGR_m_mem_free", output_dict)
-        self.__compose_scalar("SGE_HGR_TASK_gpu", output_dict)
-        self.__compose_scalar("SGE_HGR_TASK_m_mem_free", output_dict)
-        self.__compose_scalar("PE", output_dict)
-        self.__compose_scalar("QUEUE", output_dict)
-
-        self.__compose_scalar("JOB_ID", output_dict)
-        self.__compose_scalar("JOB_NAME", output_dict)
 
         self.__compose_scalar("VIRTUAL_ENV", output_dict)
 
-        self.__compose_scalar("CONDA_PREFIX", output_dict)
+        sge_dict = {}
+        self.__compose_scalar("SGE_CELL", sge_dict)
+        self.__compose_scalar("SGE_EXECD_PORT", sge_dict)
+        self.__compose_scalar("SGE_QMASTER_PORT", sge_dict)
+        self.__compose_scalar("SGE_HGR_gpu", sge_dict)
+        self.__compose_scalar("SGE_HGR_m_mem_free", sge_dict)
+        self.__compose_scalar("SGE_HGR_TASK_gpu", sge_dict)
+        self.__compose_scalar("SGE_HGR_TASK_m_mem_free", sge_dict)
+        self.__compose_scalar("PE", sge_dict)
+        self.__compose_scalar("QUEUE", sge_dict)
+        self.__compose_scalar("JOB_ID", sge_dict)
+        self.__compose_scalar("JOB_NAME", sge_dict)
+        output_dict["sge"] = sge_dict
+
+        slurm_dict = {}
+        for k in os.environ.keys():
+            if k.startswith("SLURM"):
+                self.__compose_scalar(k, slurm_dict)
+        output_dict["slurm"] = slurm_dict
+
+        conda_dict = {}
+        self.__compose_scalar("CONDA_PREFIX", conda_dict)
         conda_shlvl = int(os.environ.get("CONDA_SHLVL", 0))
         for i in range(conda_shlvl - 1, 0, -1):
-            self.__compose_scalar(f"CONDA_PREFIX_{i}", output_dict)
+            self.__compose_scalar(f"CONDA_PREFIX_{i}", conda_dict)
+        output_dict["conda"] = conda_dict
 
-        self.__compose_paths("MODULEPATH", output_dict)
-        self.__compose_paths("LOADEDMODULES", output_dict)
-        self.__compose_paths("PATH", output_dict)
+        modules_dict = {}
+        self.__compose_paths("MODULEPATH", modules_dict)
+        self.__compose_paths("MODULESHOME", modules_dict)
+        self.__compose_paths("LOADEDMODULES", modules_dict)
+        self.__compose_paths("PATH", modules_dict)
+        output_dict["modules"] = modules_dict
 
         uname = platform.uname()
         platform_dict = {}
