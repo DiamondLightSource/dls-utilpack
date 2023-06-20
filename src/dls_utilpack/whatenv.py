@@ -67,7 +67,7 @@ class Whatenv:
 
         self.__compose_scalar("VIRTUAL_ENV", output_dict)
 
-        sge_dict = {}
+        sge_dict: dict = {}
         self.__compose_scalar("SGE_CELL", sge_dict)
         self.__compose_scalar("SGE_EXECD_PORT", sge_dict)
         self.__compose_scalar("SGE_QMASTER_PORT", sge_dict)
@@ -81,20 +81,20 @@ class Whatenv:
         self.__compose_scalar("JOB_NAME", sge_dict)
         output_dict["sge"] = sge_dict
 
-        slurm_dict = {}
+        slurm_dict: dict = {}
         for k in os.environ.keys():
             if k.startswith("SLURM"):
                 self.__compose_scalar(k, slurm_dict)
         output_dict["slurm"] = slurm_dict
 
-        conda_dict = {}
+        conda_dict: dict = {}
         self.__compose_scalar("CONDA_PREFIX", conda_dict)
         conda_shlvl = int(os.environ.get("CONDA_SHLVL", 0))
         for i in range(conda_shlvl - 1, 0, -1):
             self.__compose_scalar(f"CONDA_PREFIX_{i}", conda_dict)
         output_dict["conda"] = conda_dict
 
-        modules_dict = {}
+        modules_dict: dict = {}
         self.__compose_paths("MODULEPATH", modules_dict)
         self.__compose_paths("MODULESHOME", modules_dict)
         self.__compose_paths("LOADEDMODULES", modules_dict)
