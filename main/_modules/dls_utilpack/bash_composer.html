@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dls_utilpack.bash_composer &#8212; dls-utilpack 1.5.1.dev1+gb3d0e4c documentation</title>
+    <title>dls_utilpack.bash_composer &#8212; dls-utilpack 1.6.1.dev1+gc2891a2 documentation</title>
   
   
   
@@ -451,6 +451,7 @@ document.write(`
     <span class="k">def</span> <span class="nf">compose</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
         <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
 
+        <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;eval echo &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__message</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">lines</span>
@@ -495,7 +496,7 @@ document.write(`
 
         <span class="c1"># Put a few things in the log.</span>
         <span class="n">composer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Command</span><span class="p">(</span><span class="s2">&quot;module list 2&gt;&amp;1&quot;</span><span class="p">))</span>
-        <span class="n">composer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Command</span><span class="p">(</span><span class="s2">&quot;python --version&quot;</span><span class="p">))</span>
+        <span class="n">composer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Command</span><span class="p">(</span><span class="s2">&quot;python3 --version&quot;</span><span class="p">))</span>
         <span class="n">composer</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Print</span><span class="p">(</span><span class="s2">&quot;------ end of modules_load_bash_lines ------&quot;</span><span class="p">))</span>
 
         <span class="k">return</span> <span class="n">composer</span><span class="o">.</span><span class="n">compose_lines</span><span class="p">()</span>
